@@ -1,5 +1,11 @@
 Lyrix::Application.routes.draw do
-  resources :songs
+  resources :comments
+  
+  resources :songs do
+    resources :comments
+  end
+  
+  root :to => 'songs#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

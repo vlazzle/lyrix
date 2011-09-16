@@ -1,0 +1,4 @@
+<% @comments.each do |comment| %>
+  <h4><%= comment.title %></h4>
+  <%= simple_format(comment.text) %>
+<% end %>

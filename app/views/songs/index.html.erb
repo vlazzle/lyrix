@@ -1,0 +1,14 @@
+<h2>Browse Songs</h2>
+
+<% if @songs.empty? %>
+  <p>No songs yet</p>
+<% else %>
+  <section id="songs">
+    <% @songs.each do |song| %>
+      <article>
+        <h3><%= link_to song.title, song_path(song) %></h3>
+        <%= lyrics_preview(song) %>
+      </article>
+    <% end %>
+  </section>
+<% end %>

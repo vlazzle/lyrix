@@ -1,0 +1,26 @@
+<h1><div><span class="red">lyrix</span> lyrics of</div> <%= @song.title %></h1>
+
+<section>
+  <table id="lyrics" data-song_id="<%= @song.id %>"><tbody>
+  <% @song.lines.each_with_index do |line, i| %>
+    <tr id="l<%= i + 1 %>" class="line">
+      <td class="add_comments"><%= link_to(image_tag('icons/comments_add.png'), '#') %></td>
+      <td class="view_comments">
+      <%=
+        if @song.has_comment_on_line?(i)
+          link_to(image_tag('icons/comment.png'), "#c#{i + 1}", 'data-line' => i + 1)
+        else
+          ''
+        end
+      %>
+      </td>
+      <td class="lineno"><%= link_to(i + 1, "#l#{i + 1}") %></td>
+      <td><%= line %></td>
+    </tr>
+  <% end %>
+  </tbody></table>
+</section>
+
+<section id="discussion">
+  <h1>Discussion</h1>
+</section>

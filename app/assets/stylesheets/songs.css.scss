@@ -1,3 +1,58 @@
 // Place all the styles related to the songs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  font-family: helveticaneue-light, helvetica, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  # font-family: futura, 'trebuchet ms', sans-serif;
+  font-weight: normal;
+  color: #222;
+}
+
+.red {
+  color: #c00;
+}
+
+h1 {
+  div {
+    font-size: 70%;
+    font-family: georgia, 'times new roman', serif;
+    font-style: italic;
+    text-indent: -.1em;
+  }
+}
+
+a {
+  color: #369;
+}
+
+a:hover {
+  color: #69c;
+}
+
+.add_comments {
+  img {
+    visibility: hidden;
+  }
+  &.show img {
+    visibility: visible;
+  }
+}
+
+table {
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.lineno {
+  text-align: right;
+  
+  a {
+    padding-right: .5em;
+    text-decoration: none;
+  }
+}
