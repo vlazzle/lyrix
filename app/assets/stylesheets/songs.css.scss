@@ -12,6 +12,10 @@ h1, h2, h3, h4 {
   color: #222;
 }
 
+h1 a {
+  color: #c00;
+}
+
 .red {
   color: #c00;
 }
@@ -27,10 +31,16 @@ h1 {
 
 a {
   color: #369;
+  text-decoration: none;
 }
 
 a:hover {
   color: #69c;
+  text-decoration: underline;
+}
+
+section h4 {
+  color: #c00;
 }
 
 .add_comments {
@@ -53,6 +63,5 @@ table {
   
   a {
     padding-right: .5em;
-    text-decoration: none;
   }
 }

@@ -1,4 +1,4 @@
-<h1><div><span class="red">lyrix</span> lyrics of</div> <%= @song.title %></h1>
+<h1><div><%= link_to 'lyrix', songs_path %> lyrics of</div> <%= @song.title %></h1>
 
 <section>
   <table id="lyrics" data-song_id="<%= @song.id %>"><tbody>
