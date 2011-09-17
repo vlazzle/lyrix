@@ -16,6 +16,10 @@ function updateBox($box, zeroWidth) {
   });
 }
 
+function trim(str) {
+  return str.trim().replace(/\W*$/, '');
+}
+
 function halfWidth() {
   return $('body').width() - $('#main').width()
 }
@@ -41,8 +45,8 @@ $(function() {
     var $commentList = $([
       '<section id="comment_list"><div><h1><span class="gray">',
       randomMusicalSymbol(),
-      '</span>',
-      $line.text(),
+      '</span> ',
+      trim($line.text()),
       '&hellip; <span class="gray">',
       randomMusicalSymbol(),
       '</span></h1>',
