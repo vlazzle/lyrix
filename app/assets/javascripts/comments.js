@@ -16,12 +16,12 @@ function updateBox($box, zeroWidth) {
   });
 }
 
-function trim(str) {
-  return str.trim().replace(/\W*$/, '');
-}
-
 function halfWidth() {
   return $('body').width() - $('#main').width()
+}
+
+function trim(str) {
+  return str.trim().replace(/\W*$/, '');
 }
 
 $(function() {
@@ -46,7 +46,7 @@ $(function() {
       '<section id="comment_list"><div><h1><span class="gray">',
       randomMusicalSymbol(),
       '</span> ',
-      trim($line.text()),
+      trim($lyric.text()),
       '&hellip; <span class="gray">',
       randomMusicalSymbol(),
       '</span></h1>',
@@ -72,14 +72,15 @@ $(function() {
     return false;
   });
   
-  $(window).scroll(function() {
-    // check if we're at the bottom of the page
-    if ($(window).scrollTop() === $(document).height() - $(window).height()) {
+  $('#main').scroll(function() {
+    // check if we're at the bottom of the scrollable box
+    var yPadding = parseInt($('#main2').css('padding-top')) + parseInt($('#main2').css('padding-bottom'));
+    if ($('#main').scrollTop() >= $('#main2').height() - $(window).height() + yPadding - 1) {
       $.get('/songs/' + conf.songId + '/comments', function(data) {
         $('#discussion').append(data);
         
         // this scroll event handler should only be triggered once
-        $(window).unbind('scroll');
+        $('#main').unbind('scroll');
       });
     }
   });

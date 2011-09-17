@@ -4,6 +4,7 @@
 
 body {
   font-family: helveticaneue-light, helvetica, sans-serif;
+  background: #ddd;
 }
 
 html, body {
@@ -17,10 +18,11 @@ html, body {
   overflow: auto;
   height: 100%;
   width: 50%;
+  background: white;
 }
 
 #main2 {
-  margin: 5px 15px;
+  padding: 0 15px !important;
 }
 
 h1, h2, h3, h4 {
