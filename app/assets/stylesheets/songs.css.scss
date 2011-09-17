@@ -6,6 +6,23 @@ body {
   font-family: helveticaneue-light, helvetica, sans-serif;
 }
 
+html, body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+#main {
+  overflow: auto;
+  height: 100%;
+  width: 50%;
+}
+
+#main2 {
+  margin: 5px 15px;
+}
+
 h1, h2, h3, h4 {
   # font-family: futura, 'trebuchet ms', sans-serif;
   font-weight: normal;
@@ -18,6 +35,10 @@ h1 a {
 
 .red {
   color: #c00;
+}
+
+.gray {
+  color: #888;
 }
 
 h1 {
@@ -63,5 +84,49 @@ table {
   
   a {
     padding-right: .5em;
+  }
+}
+
+#comment_list {
+  position: absolute;
+  display: none;
+  overflow: auto;
+  width: 50%;
+  background: #eee;
+  div {
+    margin: 20px 15px;
+  }
+}
+
+.callout {
+  background: white;
+  
+  position: relative;
+  margin: 18px 0;
+  padding: 18px 20px;
+  /* easy rounded corners for modern browsers */
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+   
+  .notch {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    margin: 0;
+    border-top: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+    padding: 0;
+    width: 0;
+    height: 0;
+    /* ie6 height fix */
+    font-size: 0;
+    line-height: 0;
+     /* ie6 transparent fix */
+    _border-right-color: pink;
+    _border-left-color: pink;
+    _filter: chroma(color=pink);
   }
 }

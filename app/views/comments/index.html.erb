@@ -1,4 +1,10 @@
 <% @comments.each do |comment| %>
-  <h4><%= comment.title %></h4>
-  <%= simple_format(comment.text) %>
+  <article class="comment" data-line="<%= comment.line %>">
+    <%= comment.user_id %> <span class="gray">@</span> <%= comment.created_at %>
+    <div class="callout">
+      <h4><%= comment.title %></h4>
+      <%= simple_format(comment.text) %>
+      <b class="notch"></b>
+    </div>
+  </article>
 <% end %>
