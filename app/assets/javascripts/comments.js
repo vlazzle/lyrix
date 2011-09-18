@@ -133,5 +133,11 @@ $(function() {
   Comments.showSomeComments(function(data) {
     $commentList.append(data);
     $('#discussion').append(data);
+    $('#discussion .comment').each(function() {
+      var $comment = $(this),
+          lineno = $comment.data('line');
+      
+      $('p:first', $comment).append('on <a href="#l' + lineno + '">line ' + lineno + '</a>');
+    });
   });
 });

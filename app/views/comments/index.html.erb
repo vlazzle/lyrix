@@ -1,6 +1,6 @@
 <% @comments.each do |comment| %>
   <article class="comment" data-line="<%= comment.line %>">
-    <%= comment.user_id %> <span class="gray">@</span> <%= comment.created_at %>
+    <p><%= comment.user_id %> <span class="gray">@</span> <%= comment.created_at %></p>
     <div class="callout">
       <h4><%= comment.title %></h4>
       <%= simple_format(comment.text) %>
