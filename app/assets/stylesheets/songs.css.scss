@@ -91,13 +91,17 @@ table {
 
 #comment_list {
   position: absolute;
-  display: none;
-  overflow: auto;
   width: 50%;
   background: #eee;
-  
+  overflow: auto;
+  display: none;
+      
   div {
     margin: 20px 15px;
+    
+    div {
+      display: inherit;
+    }
   }
   
   h1 {
@@ -110,7 +114,7 @@ table {
   
   position: relative;
   margin: 18px 0;
-  padding: 18px 20px;
+  padding: 1px 20px;
   /* easy rounded corners for modern browsers */
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
