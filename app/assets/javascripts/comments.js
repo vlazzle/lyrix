@@ -24,6 +24,15 @@ var Comments = (function() {
   function trim(str) {
     return str.trim().replace(/\W*$/, '');
   }
+  
+  function formatDatesForLocale($container) {
+    $('.date', $container).each(function() {
+      var $date = $(this),
+          date = new Date($date.html());
+      
+      $date.html(date.toLocaleDateString());
+    });
+  }
 
   function showSomeComments(xhrGetCallback) {
     _showComments(xhrGetCallback);
@@ -88,6 +97,7 @@ var Comments = (function() {
     updateParentBox: updateParentBox,
     halfWidth: halfWidth,
     trim: trim,
+    formatDatesForLocale: formatDatesForLocale,
     showSomeComments: showSomeComments,
     showCommentsForSelector: showCommentsForSelector
   };
@@ -122,6 +132,7 @@ $(function() {
   $('.view_comments a').click(function(e) {
     Comments.showCommentsForSelector($(e.target), function(data) {
       $commentList.append(data);
+      Comments.formatDatesForLocale($commentList);
     });
     return false;
   });
@@ -137,7 +148,9 @@ $(function() {
       var $comment = $(this),
           lineno = parseInt($comment.data('line')) + 1;
 
-      $('p:first', $comment).append(' on <a href="#l' + lineno + '">line ' + lineno + '</a>');
+      $('p:first', $comment).append(' at <a href="#l' + lineno + '">line ' + lineno + '</a>');
+      
+      Comments.formatDatesForLocale($comment);
     });
   });
 });
