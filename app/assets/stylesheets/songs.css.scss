@@ -32,14 +32,20 @@ h1, h2, h3, h4 {
 }
 
 #main2 > h1 {
-  background: #800000;
-  margin: 0 -15px 20px -15px;
-  padding: 10px 15px;
-  color: white;
-  border-bottom: 5px solid #c60;
+  color: #333;
+  font-size: 32px;
+  margin-bottom: 25px;
+  font-style: italic;
   
   a {
-    color: #c60;
+    color: #c00;
+  }
+  
+  div {
+    font-size: 70%;
+    font-family: georgia, 'times new roman', serif;
+    font-style: normal;
+    text-indent: -0.2em;
   }
 }
 
@@ -49,19 +55,6 @@ h1, h2, h3, h4 {
 
 .gray {
   color: #777;
-}
-
-h1 {
-  div {
-    font-size: 70%;
-    font-family: georgia, 'times new roman', serif;
-    font-style: italic;
-    text-indent: -0.2em;
-  }
-  
-  a {
-    color: #c00;
-  }
 }
 
 a {
