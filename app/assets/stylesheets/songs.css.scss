@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  font-family: helveticaneue-light, helvetica, sans-serif;
+  font: 18px helveticaneue-light, helvetica, sans-serif;
   background: #ddd;
 }
 
@@ -31,8 +31,16 @@ h1, h2, h3, h4 {
   color: #222;
 }
 
-h1 a {
-  color: #c00;
+#main2 > h1 {
+  background: #800000;
+  margin: 0 -15px 20px -15px;
+  padding: 10px 15px;
+  color: white;
+  border-bottom: 5px solid #c60;
+  
+  a {
+    color: #c60;
+  }
 }
 
 .red {
@@ -40,7 +48,7 @@ h1 a {
 }
 
 .gray {
-  color: #888;
+  color: #777;
 }
 
 h1 {
@@ -48,7 +56,11 @@ h1 {
     font-size: 70%;
     font-family: georgia, 'times new roman', serif;
     font-style: italic;
-    text-indent: -.1em;
+    text-indent: -0.2em;
+  }
+  
+  a {
+    color: #c00;
   }
 }
 
