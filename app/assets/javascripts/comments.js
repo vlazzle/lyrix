@@ -135,7 +135,7 @@ $(function() {
     $('#discussion').append(data);
     $('#discussion .comment').each(function() {
       var $comment = $(this),
-          lineno = $comment.data('line');
+          lineno = parseInt($comment.data('line')) + 1;
       
       $('p:first', $comment).append('on <a href="#l' + lineno + '">line ' + lineno + '</a>');
     });
