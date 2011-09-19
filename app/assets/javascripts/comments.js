@@ -52,7 +52,8 @@ var Comments = (function() {
           lineno = $line.attr('id').slice(1) - 1,
           $lyrics = $('#lyrics'),
           $lyric = $('.lyric', $line),
-          header = trim($lyric.text());
+          header = trim($lyric.text()),
+          showNotes = true;
 
       $('.lyric', $lyrics).removeClass('red');
       $lyric.addClass('red');
@@ -61,7 +62,19 @@ var Comments = (function() {
     }
     else {
       var xhrGetCallback = arguments[0],
-          header = null;
+          header = null,
+          showNotes = false;
+    }
+    
+    var url;
+    if (typeof Song !== 'undefined' && typeof Song.id !== 'undefined') {
+      url = '/songs/' + Song.id + '/comments';
+      header = header || 'All Comments';
+    }
+    else {
+      params.limit = 5;
+      url = '/comments';
+      header = header || 'Latest Comments';
     }
 
     var $commentList = $('#comment_list div');
@@ -71,13 +84,13 @@ var Comments = (function() {
       '<h1><span class="gray">',
       Comments.randomMusicalSymbol(),
       '</span> ',
-      header || 'All Comments',
+      header,
       '<span>&hellip; </span><span class="gray">',
       Comments.randomMusicalSymbol(),
       '</span></h1>'
     ].join(''));
 
-    !header && $('span', $commentList).hide();
+    !showNotes && $('span', $commentList).hide();
 
     $commentList.parent().css({
       display: 'block',
@@ -89,7 +102,7 @@ var Comments = (function() {
       width: Comments.halfWidth()
     }, 200);
 
-    $.get('/songs/' + Song.id + '/comments', params, xhrGetCallback);
+    $.get(url, params, xhrGetCallback);
   }
 
   return {
