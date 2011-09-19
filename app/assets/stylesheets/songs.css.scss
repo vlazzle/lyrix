@@ -33,9 +33,8 @@ h1, h2, h3, h4 {
 
 #main2 > h1 {
   color: #333;
-  font-size: 32px;
+  font: normal 34px helveticaneue-ultralight, helvetica, sans-serif;;
   margin-bottom: 25px;
-  font-style: italic;
   
   a {
     color: #c00;
@@ -44,7 +43,7 @@ h1, h2, h3, h4 {
   div {
     font-size: 70%;
     font-family: georgia, 'times new roman', serif;
-    font-style: normal;
+    font-style: italic;
     text-indent: -0.2em;
   }
 }
