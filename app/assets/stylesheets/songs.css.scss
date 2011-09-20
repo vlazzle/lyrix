@@ -59,11 +59,11 @@ h1, h2, h3, h4 {
 a {
   color: #369;
   text-decoration: none;
-}
-
-a:hover {
-  color: #69c;
-  text-decoration: underline;
+  
+  &:hover {
+    color: #69c;
+    text-decoration: underline;
+  }
 }
 
 section h4 {
@@ -143,5 +143,35 @@ table {
     _border-right-color: pink;
     _border-left-color: pink;
     _filter: chroma(color=pink);
+  }
+}
+
+#add_song {
+  display: inline-block;
+  color: white;
+  font-family: georgia, 'times new roman', serif;
+  font-style: italic;
+  font-size: 20px;
+  text-decoration: none;
+  border-radius: 12px;
+  padding: 0.6em 1.3em;
+  text-shadow: 0.1em 0.1em #333;
+  border: 3px solid #ddd;
+  
+  background: #6699cc; /* Old browsers */
+  background: -moz-linear-gradient(top, #6699cc 2%, #336699 99%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,#6699cc), color-stop(99%,#336699)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #6699cc 2%,#336699 99%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #6699cc 2%,#336699 99%); /* Opera11.10+ */
+  background: -ms-linear-gradient(top, #6699cc 2%,#336699 99%); /* IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6699cc', endColorstr='#336699',GradientType=0 ); /* IE6-9 */
+  background: linear-gradient(top, #6699cc 2%,#336699 99%); /* W3C */
+  
+  -moz-box-shadow:inset 0 0 10px #000000;
+  -webkit-box-shadow:inset 0 0 10px #000000;
+  box-shadow:inset 0 0 5px #000000;
+      
+  &:hover {
+    text-shadow: 0.1em 0.1em #c00;
   }
 }
