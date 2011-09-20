@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @comments = @comments.where(:line => params[:line]) if params.include?(:line)
     @comments = @comments.limit(params[:limit]) if params.include?(:limit)
     
-    respond_with(@comments, :layout => !request.xhr?) do |format|
+    respond_with(@comments) do |format|
       format.html
       format.json { render json:@comments }
     end
