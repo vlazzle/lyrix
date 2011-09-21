@@ -1,5 +1,7 @@
 class Song < ActiveRecord::Base
-  has_many :comments
+  has_many :comments, :dependent => :destroy
+
+  validates_presence_of :title
   
   def lines
     @lines ||= lyrics.split "\n"
