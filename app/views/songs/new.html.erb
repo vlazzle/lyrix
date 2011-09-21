@@ -1,0 +1,22 @@
+<% unless controller.request.xhr? %>
+  <h1><div><a href="/songs">lyrix</a> wants</div> Your Song or Poem</h1>
+<% end %>
+
+<section id="song_form">  
+  <%= form_for(@song) do |f| %>
+    <p>
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
+    </p>
+  
+    <p>
+      <%= f.label :lyrics, 'Lyrics or Words' %><br />
+      <%= f.text_area :lyrics %>
+    </p>
+  
+    <p>
+      <%= f.submit 'Add Song' %>
+    </p>
+  
+  <% end %>
+</section>
