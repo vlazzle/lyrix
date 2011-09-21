@@ -1,5 +1,5 @@
 <% @comments.each do |comment| %>
-  <article class="comment" data-line="<%= comment.line %>">
+  <article class="comment" data-line="<%= comment.line %>" data-song_id="<%= comment.song_id %>">
     <p>User <%= comment.user_id %> on <span class="date"><%= comment.created_at %></span></p>
     <div class="callout">
       <h4><%= comment.title %></h4>

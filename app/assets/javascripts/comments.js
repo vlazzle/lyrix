@@ -160,8 +160,10 @@ $(function() {
     $('#discussion .comment, ' + $commentList.selector + ' .comment').each(function() {
       var $comment = $(this),
           lineno = parseInt($comment.data('line')) + 1;
-
-      $('p:first', $comment).append(' at <a href="#l' + lineno + '">line ' + lineno + '</a>');
+      
+      if (typeof Song !== 'undefined' && typeof Song.id !== 'undefined' && !isNaN(lineno)) {
+        $('p:first', $comment).append(' at <a href="#l' + lineno + '">line ' + lineno + '</a>');
+      }
       
       Comments.formatDatesForLocale($comment);
     });
