@@ -1,18 +1,17 @@
 <h1><div><%= link_to 'lyrix', songs_path %> can</div> Browse Songs</h1>
 
-<% if @songs.empty? %>
-  <p>No songs yet</p>
-<% else %>
-  <section id="songs">
-    <% @songs.each do |song| %>
-      <article>
-        <h3><%= link_to song.title, song_path(song) %></h3>
-        <%= lyrics_preview(song) %>
-      </article>
-    <% end %>
-  </section>
-<% end %>
+<section id="songs">
 
-<p><%= link_to 'Add a Song or Poem &raquo;'.html_safe, new_song_path, :id => 'add_song' %></p>
+  <% if @all_songs.empty? %>
+    <p>No songs yet</p>
+  <% else %>
+    <%= render :partial => 'song_preview', :collection => @featured_songs %>
+  <% end %>
+
+  <p><%= link_to 'Add a Song or Poem &raquo;'.html_safe, new_song_path, :id => 'add_song' %></p>
+  
+  <%= render :partial => 'song_preview', :collection => @other_songs %>
+
+</section>
 
 <section id="comment_list"><div></div></section>

@@ -1,6 +1,8 @@
 class SongsController < ApplicationController
   def index
-    @songs = Song.order 'created_at desc'
+    @all_songs = Song.order 'created_at desc'
+    @featured_songs = @all_songs.take 3
+    @other_songs = @all_songs.drop 3
   end
   
   def show
