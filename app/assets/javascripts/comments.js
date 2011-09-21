@@ -78,6 +78,9 @@ var Comments = (function() {
     }
 
     var $commentList = $('#comment_list div');
+    if ($commentList.length === 0) {
+      return;
+    }
 
     // TODO use template
     $commentList.html([
